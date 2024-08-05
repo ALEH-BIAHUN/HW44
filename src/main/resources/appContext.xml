@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:context="http://www.springframework.org/schema/context"
+              xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean definitions here -->
+    <context:property-placeholder location="application.properties"/>
+
+    <bean id="wheel" class="org.example.Wheel">
+        <constructor-arg name="numberOfWheels" value="${wheel.numberOfWheels}"/>
+    </bean>
+
+    <bean id="engine" class="org.example.Engine">
+        <property name="engineBrand" value="${engine.engineBrand}"/>
+        <property name="engineNumberOfCylinders" value="${engine.engineNumberOfCylinders}"/>
+        <property name="enginePower" value="${engine.enginePower}"/>
+    </bean>
+
+    <bean id="transmission" class="org.example.Transmission">
+        <constructor-arg name="transmissionBrand" value="${transmission.transmissionBrand}"/>
+        <constructor-arg name="maxGear" value="${transmission.maxGear}"/>
+    </bean>
+
+    <bean id="car" class="org.example.Car">
+        <property name="engine" ref="engine"/>
+        <property name="transmission" ref="transmission"/>
+        <property name="wheel" ref="wheel"/>
+        <property name="mark" value="${car.name.mark}"/>
+    </bean>
+
+</beans>
