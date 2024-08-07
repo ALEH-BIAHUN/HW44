@@ -21,12 +21,12 @@
         <property name="enginePower" value="${engine.enginePower}"/>
     </bean>
 
-    <bean id="transmission" class="org.example.Transmission">
+    <bean id="transmission" class="org.example.Transmission" scope="prototype">
         <constructor-arg name="transmissionBrand" value="${transmission.transmissionBrand}"/>
         <constructor-arg name="maxGear" value="${transmission.maxGear}"/>
     </bean>
 
-    <bean id="car" class="org.example.Car">
+    <bean id="car" class="org.example.Car" scope="prototype">
         <property name="engine" ref="engine"/>
         <property name="transmission" ref="transmission"/>
         <property name="wheel" ref="wheel"/>

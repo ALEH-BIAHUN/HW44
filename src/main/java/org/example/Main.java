@@ -7,5 +7,13 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("appContext.xml");
         Car car = (Car) context.getBean("car", Car.class);
         System.out.println(car);
+
+        Car car1 = (Car) context.getBean("car", Car.class);
+        System.out.println(car);
+
+        Car car2 = (Car) context.getBean("car", Car.class);
+        System.out.println(car);
+
+        System.out.println(car2==car1);
     }
 }
