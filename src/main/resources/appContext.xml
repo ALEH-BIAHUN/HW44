@@ -8,7 +8,8 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- bean definitions here -->
+    <context:component-scan base-package="org.example"/>
+    <!-- bean definitions here
     <context:property-placeholder location="application.properties"/>
 
     <bean id="wheel" class="org.example.Wheel">
@@ -32,5 +33,5 @@
         <property name="wheel" ref="wheel"/>
         <property name="mark" value="${car.name.mark}"/>
     </bean>
-
+-->
 </beans>
